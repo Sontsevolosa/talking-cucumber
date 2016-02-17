@@ -1,0 +1,24 @@
+    <div class="header">
+      <div class="container">
+        <h1>talking cucumber</h1>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="container">
+        
+        <!-- Form goes here -->
+        <%= form_for(@new_post) do |post| %>
+        
+         <%= post.text_field :comment, :placeholder => "Say something" %>
+          <%= post.submit "Post", :class => "btn" %>
+        <% end %>
+        
+        <ul class="comments">
+          <% @all_posts.each do |p| %>
+          <li><%= p.comment %></li>
+          <% end %>
+        </ul>
+
+      </div>
+    </div>
